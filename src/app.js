@@ -5,9 +5,11 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
+const card = document.querySelector(".card");
+const numero = document.querySelector(".numero");
 window.onload = () => {
-  document.querySelector(".card").classList.add(crearPaloRandom());
-  document.querySelector(".numero").innerHTML = crearNumeroRandom();
+  card.classList.add(crearPaloRandom());
+  numero.innerHTML = crearNumeroRandom();
 };
 
 let crearNumeroRandom = () => {
@@ -22,4 +24,8 @@ let crearPaloRandom = () => {
   return palos[numero];
 };
 
-document.querySelector("#boton").addEventListener("click", crearPaloRandom);
+let botongenerador = document.querySelector("#boton");
+botongenerador.addEventListener("click", () => {
+  document.querySelector(".card").classList.add(crearPaloRandom());
+  document.querySelector(".numero").innerHTML = crearNumeroRandom();
+});
