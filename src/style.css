@@ -1,12 +1,57 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
-* {
+body {
   background-color: green;
 }
 
-#card {
-  height: 600px;
-  width: 400px;
+.card {
+  height: 500px;
+  width: 350px;
   background-color: white;
   border-radius: 20px;
+  display: inline-block;
+  padding: 5px;
+  position: relative;
+}
+
+.card:before {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  font-size: 90px;
+}
+.numero {
+  position: absolute;
+  text-align: center;
+  top: 180px;
+  left: 150px;
+  font-size: 90px;
+}
+.card:after {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  font-size: 90px;
+}
+
+.picas:before,
+.picas:after {
+  content: "\2660";
+}
+
+.corazones:before,
+.corazones:after {
+  content: "\2665";
+  color: red;
+}
+
+.diamantes:before,
+.diamantes:after {
+  content: "\2666";
+  color: red;
+}
+
+.treboles:before,
+.treboles:after {
+  content: "\2663";
 }
