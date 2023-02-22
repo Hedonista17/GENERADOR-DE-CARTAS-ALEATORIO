@@ -1,41 +1,39 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+window.onload = function cartaRandom() {
+  const topPalo = document.querySelector("#toppalo");
+  const numero = document.querySelector("#randomnumber");
+  const bottomPalo = document.querySelector("#bottompalo");
+  const botonGenerador = document.querySelector("#boton");
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-import { read } from "@popperjs/core";
-
-const toppalo = document.querySelector(".toppalo");
-const numero = document.querySelector(".numero");
-const bottompalo = document.querySelector(".bottompalo");
-window.onload = () => {
-  toppalo.innerHTML = newPalo;
-  numero.innerHTML = crearNumeroRandom();
-  bottompalo.innerHTML = newPalo;
-  //setTimeout(100000);
-};
-
-let crearNumeroRandom = () => {
-  let numero = Math.floor(Math.random() * 13);
-  let listaPoker = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
-  return listaPoker[numero];
-};
-
-let crearPaloRandom = () => {
-  let numero = Math.floor(Math.random() * 4);
   let palos = ["♦", "♥", "♠", "♣"];
-  if (palos === [0] || palos === [1]) {
-    palos.style.color = "red";
-  } else if (palos === [2] || palos === [3]) {
-    palos.style.color = "black";
+  let listaPoker = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+
+  generadorCartasAleatorias();
+
+  function numeroRandom(array) {
+    let numeroAleatorio = Math.floor(Math.random() * array.length);
+    return array[numeroAleatorio];
   }
-  return palos[numero];
+
+  function generadorCartasAleatorias() {
+    let paloRandom = numeroRandom(palos);
+    let numeroRandom = numeroRandom(listaPoker);
+
+    topPalo.innerHTML = paloRandom;
+    numero.innerHTML = numeroRandom;
+    bottomPalo.innerHTML = paloRandom;
+
+    if (paloRandom == palos[0] || paloRandom == palos[1]) {
+      topPalo.style.color = "red";
+      bottomPalo.style.colr = "red";
+    } else if (paloRandom == palos[2] || paloRandom == palos[3]) {
+      topPalo.style.color = "black";
+      bottomPalo.style.colr = "black";
+    }
+
+    botonGenerador.addEventListener("click", generadorCartasAleatorias);
+
+    setInterval(function() {
+      generateCard();
+    }, 10000);
+  }
 };
-let newPalo = crearPaloRandom();
-let botongenerador = document.querySelector("#boton");
-botongenerador.addEventListener("click", () => {
-  toppalo.innerHTML = crearPaloRandom();
-  numero.innerHTML = crearNumeroRandom();
-  bottompalo.innerHTML = crearPaloRandom();
-});
