@@ -16,7 +16,7 @@
   <body>
     <div class="container-fluid text-center col-lg-10 col-md-8 col-sm-auto">
       <h1 class="my-5">Random Card Generator</h1>
-      <div class="card">
+      <div class="card" id="carta">
         <span class="palosuperior" id="toppalo"></span>
         <span class="numero" id="randomnumber">3</span>
         <span class="paloinferior" id="bottompalo"></span>
@@ -28,11 +28,23 @@
       </div>
       <div class="container-fluid p-4 text-center">
         <label class="titulo"> Ajustar Ancho</label>
-        <input class="modificacion" for="ancho" type="text" />
+        <input
+          class="caja"
+          id="ancho"
+          type="number"
+          step="50"
+          onchange="modificarCarta()"
+        />
       </div>
       <div class="container-fluid p-4 text-center">
         <label class="titulo"> Ajustar Altura</label>
-        <input class="modificacion" for="alto" type="text" />
+        <input
+          class="caja"
+          id="alto"
+          type="number"
+          step="50"
+          onchange="modificarCarta()"
+        />
       </div>
 
       <div class="container-fluid p-4">
