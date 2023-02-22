@@ -4,12 +4,16 @@ import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
+import { read } from "@popperjs/core";
 
-const card = document.querySelector(".card");
+const toppalo = document.querySelector(".toppalo");
 const numero = document.querySelector(".numero");
+const bottompalo = document.querySelector(".bottompalo");
 window.onload = () => {
-  card.classList.add(crearPaloRandom());
+  toppalo.innerHTML = newPalo;
   numero.innerHTML = crearNumeroRandom();
+  bottompalo.innerHTML = newPalo;
+  //setTimeout(100000);
 };
 
 let crearNumeroRandom = () => {
@@ -20,12 +24,18 @@ let crearNumeroRandom = () => {
 
 let crearPaloRandom = () => {
   let numero = Math.floor(Math.random() * 4);
-  let palos = ["picas", "diamantes", "corazones", "treboles"];
+  let palos = ["♦", "♥", "♠", "♣"];
+  if (palos === [0] || palos === [1]) {
+    palos.style.color = "red";
+  } else if (palos === [2] || palos === [3]) {
+    palos.style.color = "black";
+  }
   return palos[numero];
 };
-
+let newPalo = crearPaloRandom();
 let botongenerador = document.querySelector("#boton");
 botongenerador.addEventListener("click", () => {
-  document.querySelector(".card").classList.add(crearPaloRandom());
-  document.querySelector(".numero").innerHTML = crearNumeroRandom();
+  toppalo.innerHTML = crearPaloRandom();
+  numero.innerHTML = crearNumeroRandom();
+  bottompalo.innerHTML = crearPaloRandom();
 });
