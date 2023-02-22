@@ -4,19 +4,33 @@ window.onload = function cartaRandom() {
   const bottomPalo = document.querySelector("#bottompalo");
   const botonGenerador = document.querySelector("#boton");
 
+  let listaPoker = [
+    "A",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K"
+  ];
   let palos = ["♦", "♥", "♠", "♣"];
-  let listaPoker = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 
   generadorCartasAleatorias();
 
-  function numeroRandom(array) {
+  function valorRandom(array) {
     let numeroAleatorio = Math.floor(Math.random() * array.length);
     return array[numeroAleatorio];
   }
 
   function generadorCartasAleatorias() {
-    let paloRandom = numeroRandom(palos);
-    let numeroRandom = numeroRandom(listaPoker);
+    let paloRandom = valorRandom(palos);
+    let numeroRandom = valorRandom(listaPoker);
 
     topPalo.innerHTML = paloRandom;
     numero.innerHTML = numeroRandom;
@@ -29,11 +43,11 @@ window.onload = function cartaRandom() {
       topPalo.style.color = "black";
       bottomPalo.style.colr = "black";
     }
-
-    botonGenerador.addEventListener("click", generadorCartasAleatorias);
-
-    setInterval(function() {
-      generateCard();
-    }, 10000);
   }
+
+  botonGenerador.addEventListener("click", generadorCartasAleatorias);
+
+  setInterval(function() {
+    generadorCartasAleatorias();
+  }, 10000);
 };
