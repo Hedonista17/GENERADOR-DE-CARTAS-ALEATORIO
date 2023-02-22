@@ -1,3 +1,4 @@
+import "/workspace/GENERADOR-DE-CARTAS-ALEATORIO/src/style.css";
 window.onload = function cartaRandom() {
   const topPalo = document.querySelector("#toppalo");
   const numero = document.querySelector("#randomnumber");
