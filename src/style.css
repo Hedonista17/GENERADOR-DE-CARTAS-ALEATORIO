@@ -24,7 +24,7 @@ body {
   position: absolute;
   text-align: center;
   top: 180px;
-  left: 150px;
+  left: 140px;
   font-size: 90px;
 }
 .paloinferior {
@@ -33,4 +33,8 @@ body {
   right: 15px;
   font-size: 90px;
   -webkit-transform: rotate(-180deg);
+}
+.titulo {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: italic;
 }

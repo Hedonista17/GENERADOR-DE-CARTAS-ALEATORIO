@@ -4,6 +4,7 @@ window.onload = function cartaRandom() {
   const numero = document.querySelector("#randomnumber");
   const bottomPalo = document.querySelector("#bottompalo");
   const botonGenerador = document.querySelector("#boton");
+  //const div = document.querySelector(".modificacion");
 
   let listaPoker = [
     "A",
@@ -47,5 +48,7 @@ window.onload = function cartaRandom() {
   }
 
   botonGenerador.addEventListener("click", generadorCartasAleatorias);
-  setInterval(generadorCartasAleatorias(), 1000);
+  setInterval(function() {
+    generadorCartasAleatorias();
+  }, 10000);
 };
