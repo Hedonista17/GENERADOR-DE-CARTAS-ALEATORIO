@@ -38,16 +38,13 @@ window.onload = function cartaRandom() {
 
     if (paloRandom == palos[0] || paloRandom == palos[1]) {
       topPalo.style.color = "red";
-      bottomPalo.style.colr = "red";
-    } else if (paloRandom == palos[2] || paloRandom == palos[3]) {
+      bottomPalo.style.color = "red";
+    } else {
       topPalo.style.color = "black";
-      bottomPalo.style.colr = "black";
+      bottomPalo.style.color = "black";
     }
   }
 
   botonGenerador.addEventListener("click", generadorCartasAleatorias);
-
-  setInterval(function() {
-    generadorCartasAleatorias();
-  }, 10000);
+  setInterval(generadorCartasAleatorias(), 1000);
 };

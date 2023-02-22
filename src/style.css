@@ -14,20 +14,20 @@ body {
   position: relative;
 }
 
-#toppalo {
+.palosuperior {
   position: absolute;
   top: 5px;
   left: 15px;
   font-size: 90px;
 }
-#randomnumber {
+.numero {
   position: absolute;
   text-align: center;
   top: 180px;
   left: 150px;
   font-size: 90px;
 }
-#bottompalo {
+.paloinferior {
   position: absolute;
   bottom: 5px;
   right: 15px;
