@@ -45,13 +45,18 @@ window.onload = function cartaRandom() {
       bottomPalo.style.color = "black";
     }
   }
-  function modificarCarta() {
-    let ancho = document.querySelector("#ancho").style;
-    let alto = document.querySelector("#alto").style;
-    const caja = document.querySelector(".card");
-    caja.style.width = ancho + "px";
-    caja.style.height = alto + "px";
-  }
+  let ancho = document.querySelector("#ancho");
+  let alto = document.querySelector("#alto");
+  const caja = document.querySelector("#carta");
+  ancho.addEventListener("change", evento => {
+    caja.style.width = `${evento.target.value}px`;
+    console.log(evento.target.value);
+  });
+  alto.addEventListener("change", evento => {
+    caja.style.height = `${evento.target.value}px`;
+    console.log(evento.target.value);
+  });
+
   botonGenerador.addEventListener("click", generadorCartasAleatorias);
   setInterval(function() {
     generadorCartasAleatorias();

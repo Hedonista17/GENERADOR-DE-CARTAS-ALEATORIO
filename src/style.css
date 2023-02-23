@@ -12,6 +12,9 @@ body {
   position: relative;
   height: 500px;
   width: 350px;
+  flex-wrap: wrap;
+  min-width: 200px;
+  min-height: 300px;
 }
 
 .palosuperior {
@@ -19,6 +22,7 @@ body {
   top: 5px;
   left: 15px;
   font-size: 90px;
+  flex-wrap: wrap;
 }
 .numero {
   position: absolute;
@@ -26,6 +30,10 @@ body {
   top: 180px;
   left: 140px;
   font-size: 90px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .paloinferior {
   position: absolute;
@@ -33,6 +41,7 @@ body {
   right: 15px;
   font-size: 90px;
   -webkit-transform: rotate(-180deg);
+  flex-wrap: wrap;
 }
 .titulo {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
