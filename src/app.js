@@ -50,11 +50,9 @@ window.onload = function cartaRandom() {
   const caja = document.querySelector("#carta");
   ancho.addEventListener("change", evento => {
     caja.style.width = `${evento.target.value}px`;
-    console.log(evento.target.value);
   });
   alto.addEventListener("change", evento => {
     caja.style.height = `${evento.target.value}px`;
-    console.log(evento.target.value);
   });
 
   botonGenerador.addEventListener("click", generadorCartasAleatorias);
